@@ -16,8 +16,8 @@ class DisplayActivity : AppCompatActivity() {
     private lateinit var textSizeSelectorButton: Button
     private val intentLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if(it.resultCode == RESULT_OK){
-            it.data.apply{
-                lyricsDisplayTextView.textSize = intent.getIntExtra(RESULT,10).toFloat()
+            it.data?.apply{
+                lyricsDisplayTextView.textSize = getIntExtra(RESULT,10).toFloat()
             }
         }
     }
